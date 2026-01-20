@@ -1,11 +1,19 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=https://script.google.com/a/macros/valdishopper.com/s/AKfycbyRp8tXILkRD9fMDLjSXqF3Ur_gjIHAcR_vmE47FHLqsPJUaqgbIWt__ZABHFDqVv2u/exec">
-    <title>Inventario VS</title>
-  </head>
-  <body>
-    Redirigiendo…
-  </body>
+<head><meta charset="utf-8"><title>Inventario VS</title></head>
+<body>
+  <h1>Inventario</h1>
+
+  <script>
+    const URL = "https://script.google.com/macros/s/AKfycbzh68QkfrCaXn9aCTCYNTG8kU92v-JGn4WNDDchMNu3xtdSfFQfUA4gBFwShYwi47bSnA/exec";
+
+    function registrar() {
+      const payload = JSON.stringify({ evento: "visita", t: Date.now() });
+
+      // “fire and forget”, sin CORS:
+      navigator.sendBeacon(URL, new Blob([payload], {type:"text/plain"}));
+      alert("Enviado");
+    }
+  </script>
+</body>
 </html>
